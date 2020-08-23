@@ -1,7 +1,8 @@
 import random
 import time
 
-nums = [random.randint(0, 10000) for _ in range(1000)]
+# nums = [random.randint(0, 10000) for _ in range(1000)]
+nums = [1, 1, 1, 2, 2 -2, -1]
 nums_1 = nums.copy()
 nums_2 = nums.copy()
 # print(nums)
