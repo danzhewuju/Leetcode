@@ -11,9 +11,6 @@
 3 4 11
 5 6 9
 4 5 6
-
-
-
 '''
 def create_graph():
     print("节点的个数:",end='')
