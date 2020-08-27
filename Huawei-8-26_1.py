@@ -29,7 +29,7 @@ def run():
     # 换位操作
     for i in range(n):
         if len(info[i]) % 2 == 1:
-            info[i] = ['0'] + info[i]
+            info[i] = ['01'] + info[i]
         j = len(info[i]) - 1
         while j - 1 > -1:
             info[i][j], info[i][j-1] = info[i][j-1], info[i][j]  # 交换
