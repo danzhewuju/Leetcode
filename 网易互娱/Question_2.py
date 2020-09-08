@@ -49,7 +49,7 @@ def run():
                 res = min(res, distance)
                 return
             if distance >= res:
-                return 
+                return
             vis[node] = 1
             for next_node in graph[node]:
                 if vis[next_node] == 0:
