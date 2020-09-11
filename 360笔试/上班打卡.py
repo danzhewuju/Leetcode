@@ -21,7 +21,7 @@ def run():
         for t in leave[:-1]:
             dp[t] = 0
 
-    # 现在需要讨论上班的第一个人是不是老板
+    # 现在需要讨论上班的第一个人,下班的最后一个人是不是老板
     go_flag = False
     for x in leave:
         if x not in go:  # 下班的记录里面存在一条记录上班里面没有, 上班第一个不是老板
