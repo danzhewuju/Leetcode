@@ -32,11 +32,11 @@ def run():
         if x not in leave:  # 上班的记录存在一条下班没有, 下班的最后一个不是老板
             leave_flag = True
             break
-    # print(go_flag, leave_flag)
+    print(go_flag, leave_flag)
     if go_flag:
-        dp[first] = 0
+        dp[go[0]] = 0
     if leave_flag:
-        dp[last] = 0
+        dp[leave[-1]] = 0
 
     res = [str(i) for i, x in enumerate(dp) if x == 1]
     ans = " ".join(res)
