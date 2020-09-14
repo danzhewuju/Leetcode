@@ -20,26 +20,31 @@ def create_graph():
     graph = [[0]*n for _ in range(n)]
     for i in range(e):
         s,e,v = [int(x) for x in input().split()]
-        graph[s-1][e-1] , graph[e-1][s-1]= v, v
+        graph[s-1][e-1] =  v
     return graph
 
 def Dijkstra():
     graph = create_graph()
     n = len(graph)   # 节点的个数
     print(graph)
-    vis = [0]*n  # 访问控制
-    start, end = 0, 4 # 设置起点和终点
-    max_distant = 10**9
-    dis = [max_distant]*n  # 设置距离
+    start, end = map(int, input().split()) # 设置起点和终点
+    start -= 1
+    end -= 1
+    # 初始化
+    dis = [float('inf')]*n  # 距离
+    vis = set()
     dis[start] = 0 # 初始化
-    queue = [start]  # 设置队列
-    while queue:
-        node = queue.pop(0)
-        vis[node] = 1
-        for j,val in enumerate(graph[node]):
-            if val != 0 and vis[j] == 0:
-                queue.append(j) # 加入新的节点
-                dis[j] = min(dis[j], dis[node]+val) # 更新节点的信息
+    min_point = start
+    while len(vis) < n : # 存在没有访问的节点
+        vis.add(min_point)  # 将节点加入到访问的节点中
+        for j,val in enumerate(graph[min_point]):
+            if j not in vis and val > 0:
+                dis[j] = min(dis[j], dis[min_point]+val)
+        min_dist = float('inf')
+        for i, d in enumerate(dis): # 找到没有访问过的最小的边
+            if i not in vis and d > 0 and d < min_dist:
+                min_dist = d
+                min_point = i 
     res = dis[end]
     print(dis)
     print(res)
