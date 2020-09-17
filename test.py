@@ -1,5 +1,5 @@
-print('hello')
-import numpy as np
-a = [162, 101, 106, 128, 196, 138, 108, 176, 164, 154]
-b = np.var(a)
-print(b)
+import heapq
+a = [1, 2, 3]
+heapq.heapify(a)
+print(a)
+print(heapq.heappop(a))
