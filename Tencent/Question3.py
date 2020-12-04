@@ -72,7 +72,7 @@ def run():
         p1 = p1.next
         p2 = p2.next
     
-    if p1:
+    while p1:
         tmp = p1.val-bit_p
         bit_p = 0
         if tmp < 0:
@@ -82,7 +82,7 @@ def run():
         cur.next = new_p
         cur = new_p
         p1 = p1.next
-    if p2:
+    while p2:
         tmp = p2.val-bit_p
         bit_p = 0
         if tmp < 0:
@@ -93,8 +93,8 @@ def run():
         cur = new_p
         p2 = p2.next
     new_head = reversed(new_head)
-    while new_head and new_head.val == 0:
-        new_head = new_head.next
+    # while new_head and new_head.val == 0:
+    #     new_head = new_head.next
     read_link(new_head)
 
     return new_head
